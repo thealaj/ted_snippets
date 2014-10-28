@@ -1,0 +1,29 @@
+{
+  "name": "ted_quotes",
+  "version": "1.0.0",
+  "description": "sound_bite_roulette",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "thealaj",
+  "license": "ISC",
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-contrib-jshint": "~0.10.0",
+    "grunt-contrib-nodeunit": "~0.4.1",
+    "grunt-contrib-uglify": "~0.5.0",
+    "grunt-contrib-cssmin": "*",
+    "grunt-contrib-sass": "*",
+    "grunt-contrib-watch": "*",
+    "grunt-cssc": "*",
+    "grunt-htmlhint": "*",
+    "matchdep": "*"
+  },
+  "dependencies": {
+    "express": "^4.10.0",
+    "query-string": "^1.0.0",
+    "request": "^2.47.0"
+  }
+}
