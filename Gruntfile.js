@@ -1,7 +1,5 @@
-require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
-
 module.exports = function(grunt) {
-
+  require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     concat: {
@@ -38,9 +36,19 @@ module.exports = function(grunt) {
         }
       }
     },
+    sass: {
+      dist: {
+        options: {
+
+        },
+        files: {
+          'css/style.css': 'scss/style.scss'
+        }
+      }
+    },
     watch: {
       files: ['<%= jshint.files %>'],
-      tasks: ['jshint', 'qunit']
+      tasks: ['jshint', 'qunit', 'sass']
     }
   });
 

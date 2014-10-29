@@ -19,8 +19,7 @@ var randNumber = Math.floor(Math.random() * 2145);
 		success: function(data) {
 			console.log('Got back success from call!');
 			console.log(data);
-			quotesData = data.quotes;
-			spinAppender(quotesData);
+			 quotesData = data.quotes;
 		}
 	}); 
 

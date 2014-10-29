@@ -1,0 +1,19 @@
+{
+  "name": "ted_quotes",
+  "version": "0.0.0",
+  "authors": [
+    "Alexandria A. Johnson <alexandria.abdallah@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "src/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "susy": "~2.1.3"
+  }
+}
