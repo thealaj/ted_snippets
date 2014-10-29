@@ -48,7 +48,14 @@ module.exports = function(grunt) {
     },
     watch: {
       files: ['<%= jshint.files %>'],
-      tasks: ['jshint', 'qunit', 'sass']
+      tasks: ['jshint', 'qunit', 'sass'],
+      css: {
+            files: ['scss/*.scss'],
+            tasks: ['sass'],
+            options: {
+                spawn: false
+            }
+        } 
     }
   });
 
@@ -57,6 +64,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-qunit');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-contrib-sass');
+
 
   grunt.registerTask('test', ['jshint', 'qunit']);
 

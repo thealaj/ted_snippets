@@ -22,11 +22,14 @@
    Author's custom styles
    ========================================================================== */
 
-
    body {
         font-family: 'News Cycle', Helvetica, sans-serif;
         font-size: 11px;
       }
+
+  h1 {
+    color: green;
+  }    
 
       #spinner {
         margin: 150px auto;
@@ -58,8 +61,19 @@
         margin: 0 auto;
         height: 20px;
         width: 600px;
+        // -webkit-transform-style: preserve-3d;
+        // -webkit-animation-timing-function: linear;
+        //         -webkit-animation-iteration-count: infinite;
+
+      }
+
+      .ring-change {
+        margin: 0 auto;
+        height: 20px;
+        width: 600px;
+        background-color: orange;
         -webkit-transform-style: preserve-3d;
-        -webkit-animation-iteration-count: 0;
+        -webkit-animation-iteration-count: infinite;
         -webkit-animation-timing-function: linear;
       }
       
@@ -245,3 +259,5 @@
 .flip {
   @include container(80em); 
 }
+
+ 

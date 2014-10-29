@@ -1,3 +1,4 @@
+
 /*! HTML5 Boilerplate v4.3.0 | MIT License | http://h5bp.com/ */
 
 /*
@@ -32,12 +33,6 @@
         margin: 150px auto;
         width: 600px;
         height: 400px;
-        /*
-        
-        Setting the perspective of the contents of the stage
-        but not the stage itself
-        
-        */
         -webkit-perspective: 800;
       }
 
@@ -59,12 +54,14 @@
         height: 20px;
         width: 600px;
         -webkit-transform-style: preserve-3d;
-        -webkit-animation-iteration-count: 0;
+        -webkit-animation-iteration-count: infinite;
         -webkit-animation-timing-function: linear;
       }
+
+      
       
       .ring > :nth-child(odd) {
-        background-color: #FCE858;
+        background-color: purple;
         border: 1px solid #F2E5B5;
 
       }
@@ -111,7 +108,7 @@
         100%  { -webkit-transform: rotateX(360deg); }
       }
 
-      
+     
 
 
 

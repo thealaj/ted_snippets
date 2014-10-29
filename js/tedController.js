@@ -7,23 +7,24 @@ var spinAppender = function(quotesData) {
 		}
 
 
-$(document).ready(function() { 
-var randNumber = Math.floor(Math.random() * 2145);
-	$.ajax({
-		type: 'GET',
-		url: 'https://api.ted.com/v1/quotes.json?api-key=&filter=id:' + randNumber +'..' + (randNumber + 5),
-		dataType: "jsonp",
-		error: function(a) {
-			console.log('error', a.responseText);
-		},
-		success: function(data) {
-			console.log('Got back success from call!');
-			console.log(data);
-			 quotesData = data.quotes;
-		}
-	}); 
+// $(document).ready(function() { 
+// var randNumber = Math.floor(Math.random() * 2145);
+// 	$.ajax({
+// 		type: 'GET',
+// 		url: 'https://api.ted.com/v1/quotes.json?api-key=&filter=id:' + randNumber +'..' + (randNumber + 5),
+// 		dataType: "jsonp",
+// 		error: function(a) {
+// 			console.log('error', a.responseText);
+// 		},
+// 		success: function(data) {
+// 			console.log('Got back success from call!');
+// 			console.log(data);
+// 			quotesData = data.quotes;
+// 		}
+// 	}); 
+// });
 
-	$('.spin-button').on("click", function(){
-		spinAppender(quotesData);
+$('.spin-button').on("click", function(){
+		// spinAppender(quotesData);
+		$('.ring').toggleClass('ring-change');
 	});
-});
