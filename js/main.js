@@ -1,5 +1,5 @@
 
-const POSTERS_PER_ROW = 12;
+const SELECTIONS_PER_ROW = 12;
       const RING_RADIUS = 200;
 
       function setup_selections (row)
@@ -22,7 +22,7 @@ const POSTERS_PER_ROW = 12;
 
       function init ()
       {
-        setup_selections(document.getElementById('ring-1'));
+        setup_selections(document.getElementById('ring'));
     
       }
 

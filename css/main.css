@@ -25,7 +25,7 @@
 
    body {
         font-family: 'News Cycle', Helvetica, sans-serif;
-        font-size: 12px;
+        font-size: 11px;
       }
 
       #spinner {
@@ -51,46 +51,47 @@
         Make the whole set of rows use the x-axis spin animation
         for a duration of 7 seconds, running infinitely and linearly
         */
-       /* -webkit-animation-name: x-spin;
-        -webkit-animation-duration: 7s;
-        -webkit-animation-iteration-count: infinite;
-        -webkit-animation-timing-function: linear;*/
+       
       }
 
       .ring {
         margin: 0 auto;
-        height: 110px;
+        height: 20px;
         width: 600px;
         -webkit-transform-style: preserve-3d;
-        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-iteration-count: 0;
         -webkit-animation-timing-function: linear;
       }
       
       .ring > :nth-child(odd) {
-        background-color: gray;
+        background-color: #FCE858;
+        border: 1px solid #F2E5B5;
+
       }
 
       .ring > :nth-child(even) {
-        background-color: green;
+        background-color: #F2E5B5;
+        border: 1px solid #FCE858;
+
       }
 
       .selection {
         position: absolute;
-        left: 50px; /*also helps keep ring straight*/
+        left: 30px; /*also helps keep ring straight*/
         width: 500px;
-        height: 100px;
-        opacity: 0.9;
+        height: 50px;
         color: rgba(0,0,0,0.9);
         -webkit-border-radius: 10px;
       }
       
       .selection > p {
         font-family: 'News Cycle', sans-serif;
-        font-size: 36px;
+        font-size: 12px;
         font-weight: bold;
         text-align: center;
-        margin-top: 28px;
-      }
+        padding: 2px;
+/*        margin-top: 28px;
+*/      }
 
       /*
       Set up each row to have a different animation duration
@@ -98,7 +99,7 @@
       */
       #ring {
         -webkit-animation-name: x-spin;
-        -webkit-animation-duration: 2s;
+        -webkit-animation-duration: 1s;
         
       }
 
