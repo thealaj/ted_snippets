@@ -7,14 +7,14 @@ var quoteAppender = function(quotesData) {
 			} 
 		}
 
-var quoteRemover = function(quotesData) { 
-	for (var i = 0; i < quotesData.length; i++) {
-		var $div = '.'+i 
-		$($div).hide();
+// var quoteRemover = function(quotesData) { 
+// 	for (var i = 0; i < quotesData.length; i++) {
+// 		var $div = '.'+i 
+// 		$($div).hide();
 
-			} 
+// 			} 
 
-		}
+// 		}
 
 //AJAX stuff
 
@@ -65,12 +65,16 @@ $('.spin-button').on("click", function(e){
 
 //DISPLAYING FINAL QUOTE
 		window.setTimeout(function() {
-		quoteRemover(quotesData);
+		// quoteRemover(quotesData);
 		$(element).css('webkitTransformStyle', "flat");
 		$(element).css('webkitAnimationPlayState', "paused");
-		$('.ring').empty();
-		$('.ring').append($selected);
-	}, 5000);
+		$('.ring').fadeOut(500);
+		$('.selected_quote').append($selected);
+		$('.selected_quote').show();
+		$('.retry-button').show();
+		$('.listen-button').show();
+		$('.spin-button').hide();
+	}, 3000);
 
 	} else {
 		$(element).css('webkitAnimationPlayState', "paused");

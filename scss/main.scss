@@ -1,257 +1,278 @@
 /*! HTML5 Boilerplate v4.3.0 | MIT License | http://h5bp.com/ */
 
 /*
- * What follows is the result of much research on cross-browser styling.
- * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
- * Kroc Camen, and the H5BP dev community and team.
- */
+* What follows is the result of much research on cross-browser styling.
+* Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+* Kroc Camen, and the H5BP dev community and team.
+*/
 
 
 /* ==========================================================================
-   Browse Happy prompt
-   ========================================================================== */
+ Browse Happy prompt
+ ========================================================================== */
 
-.browsehappy {
-    margin: 0.2em 0;
-    background: #ccc;
-    color: #000;
-    padding: 0.2em 0;
+ .browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
 }
 
 /* ==========================================================================
-   Author's custom styles
-   ========================================================================== */
+ Author's custom styles
+ ========================================================================== */
 
-   body {
-        font-family: 'News Cycle', Helvetica, sans-serif;
-        font-size: 11px;
-      }
+body {
+  font-family: 'News Cycle', Helvetica, sans-serif;
+  font-size: 11px;
+}
 
-  h1 {
-    color: green;
-  }    
+h1 {
+  color: #FB4530;
+}  
+
+
+.container {
+  // background-color: #2A2722;
+@include container;
+@include susy-grid-background;
+}  
 
 .button-holder {
   margin-bottom: 20px;
   padding: 50px;
 }
-  
-  .selected_quote {
-    margin-bottom: 30px;
-  }
 
-      #spinner {
-        margin: 150px auto;
-        width: 600px;
-        height: 10px;
-        border: 1px solid black;
-        -webkit-perspective: 700;
-      }
+.retry-button, .listen-button {
+  display: none;
+}
 
-      #rotate {
-        margin: 0 auto;
-        border: 2px solid red;
-        width: 600px;
-        height: 30px;
-        /* Ensure that we're in 3D space */
-        -webkit-transform-style: preserve-3d;
-        /*
-        Make the whole set of rows use the x-axis spin animation
-        for a duration of 7 seconds, running infinitely and linearly
-        */
-       
-      }
 
-      .ring {
-        border: 1px solid blue;
-        height: 30px;
-        width: 600px;
-        -webkit-transform-style: preserve-3d;
-        -webkit-animation-play-state:paused; 
-        -webkit-animation-timing-function: linear;
-        -webkit-animation-iteration-count: infinite;
 
-      }
-      
-      .ring > :nth-child(odd) {
-        background-color: #FCE858;
+#spinner {
+  margin: 150px auto;
+  width: 600px;
+  height: 10px;
+      // border: 1px solid black;
+      -webkit-perspective: 700;
+    }
 
-      }
-
-      .ring > :nth-child(even) {
-        background-color: #F2E5B5;
-
-      }
- 
-      .selection {
-        position: absolute;
-        left: 30px; /*also helps keep ring straight*/
-        width: 500px;
-        height: 30px;
-        // color: rgba(0,0,0,0.9);
-        -webkit-border-radius: 5px;
-        text-align: center;
-      }
-      
-      .selection > p {
-        font-family: 'News Cycle', sans-serif;
-        font-size: 12px;
-        font-weight: bold;
-        text-align: center;
-      }
-
+    #rotate {
+      margin: 0 auto;
+      // border: 2px solid red;
+      width: 600px;
+      height: 30px;
+      /* Ensure that we're in 3D space */
+      -webkit-transform-style: preserve-3d;
       /*
-      Set up each row to have a different animation duration
-      and alternating y-axis rotation directions.
+      Make the whole set of rows use the x-axis spin animation
+      for a duration of 7 seconds, running infinitely and linearly
       */
-      #ring {
-        -webkit-animation-name: x-spin;
-        -webkit-animation-duration: 1s;
-        
-      }
 
-
-     
-      @-webkit-keyframes x-spin {
-        0%    { -webkit-transform: rotateX(0deg); }
-        50%   { -webkit-transform: rotateX(180deg); }
-
-        100%  { -webkit-transform: rotateX(360deg); }
-      }
-
-      
-
-
-
-
-/* ==========================================================================
-   Helper classes
-   ========================================================================== */
-
-
-
-/*
- * Clearfix: contain floats
- *
- * For modern browsers
- * 1. The space content is one way to avoid an Opera bug when the
- *    `contenteditable` attribute is included anywhere else in the document.
- *    Otherwise it causes space to appear at the top and bottom of elements
- *    that receive the `clearfix` class.
- * 2. The use of `table` rather than `block` is only necessary if using
- *    `:before` to contain the top-margins of child elements.
- */
-
-.clearfix:before,
-.clearfix:after {
-    content: " "; /* 1 */
-    display: table; /* 2 */
-}
-
-.clearfix:after {
-    clear: both;
-}
-
-/*
- * For IE 6/7 only
- * Include this rule to trigger hasLayout and contain floats.
- */
-
-.clearfix {
-    *zoom: 1;
-}
-
-/* ==========================================================================
-   EXAMPLE Media Queries for Responsive Design.
-   These examples override the primary ('mobile first') styles.
-   Modify as content requires.
-   ========================================================================== */
-
-@media only screen and (min-width: 35em) {
-    /* Style adjustments for viewports that meet the condition */
-}
-
-@media print,
-       (-o-min-device-pixel-ratio: 5/4),
-       (-webkit-min-device-pixel-ratio: 1.25),
-       (min-resolution: 120dpi) {
-    /* Style adjustments for high resolution devices */
-}
-
-/* ==========================================================================
-   Print styles.
-   Inlined to avoid required HTTP connection: h5bp.com/r
-   ========================================================================== */
-
-@media print {
-    * {
-        background: transparent !important;
-        color: #000 !important; /* Black prints faster: h5bp.com/s */
-        box-shadow: none !important;
-        text-shadow: none !important;
     }
 
-    a,
-    a:visited {
-        text-decoration: underline;
+    .selected_quote {
+      display: none;
+      padding: 10px;
+      height: 300px;
+      width: 300px;
+      background-color: #DC9B99;
+      color: white;
+      font-size: 20px;
+
     }
 
-    a[href]:after {
-        content: " (" attr(href) ")";
+    .ring {
+      // border: 1px solid blue;
+      height: 30px;
+      width: 600px;
+      -webkit-transform-style: preserve-3d;
+      -webkit-animation-play-state:paused; 
+      -webkit-animation-timing-function: linear;
+      -webkit-animation-iteration-count: infinite;
+
     }
 
-    abbr[title]:after {
-        content: " (" attr(title) ")";
+    
+    .ring > :nth-child(odd) {
+      background-color: #B87A91;
+
+    }
+
+    .ring > :nth-child(even) {
+      background-color: #8A567A;
+
+    }
+// #DC9B99
+    .selection {
+      position: absolute;
+      left: 30px; /*also helps keep ring straight*/
+      width: 500px;
+      height: 30px;
+      // color: rgba(0,0,0,0.9);
+      -webkit-border-radius: 5px;
+      text-align: center;
+    }
+    
+    .selection > p {
+      font-family: 'News Cycle', sans-serif;
+      font-size: 12px;
+      font-weight: bold;
+      text-align: center;
     }
 
     /*
-     * Don't show links for images, or javascript/internal links
-     */
-
-    .ir a:after,
-    a[href^="javascript:"]:after,
-    a[href^="#"]:after {
-        content: "";
+    Set up each row to have a different animation duration
+    and alternating y-axis rotation directions.
+    */
+    #ring {
+      -webkit-animation-name: x-spin;
+      -webkit-animation-duration: 1s;
+      
     }
 
-    pre,
-    blockquote {
-        border: 1px solid #999;
-        page-break-inside: avoid;
+
+
+    @-webkit-keyframes x-spin {
+      0%    { -webkit-transform: rotateX(0deg); }
+      50%   { -webkit-transform: rotateX(180deg); }
+
+      100%  { -webkit-transform: rotateX(360deg); }
     }
 
-    thead {
-        display: table-header-group; /* h5bp.com/t */
-    }
+    
 
-    tr,
-    img {
-        page-break-inside: avoid;
-    }
 
-    img {
-        max-width: 100% !important;
-    }
 
-    @page {
-        margin: 0.5cm;
-    }
 
-    p,
-    h2,
-    h3 {
-        orphans: 3;
-        widows: 3;
-    }
+/* ==========================================================================
+ Helper classes
+ ========================================================================== */
 
-    h2,
-    h3 {
-        page-break-after: avoid;
-    }
+
+
+/*
+* Clearfix: contain floats
+*
+* For modern browsers
+* 1. The space content is one way to avoid an Opera bug when the
+*    `contenteditable` attribute is included anywhere else in the document.
+*    Otherwise it causes space to appear at the top and bottom of elements
+*    that receive the `clearfix` class.
+* 2. The use of `table` rather than `block` is only necessary if using
+*    `:before` to contain the top-margins of child elements.
+*/
+
+.clearfix:before,
+.clearfix:after {
+  content: " "; /* 1 */
+  display: table; /* 2 */
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+/*
+* For IE 6/7 only
+* Include this rule to trigger hasLayout and contain floats.
+*/
+
+.clearfix {
+  *zoom: 1;
+}
+
+/* ==========================================================================
+ EXAMPLE Media Queries for Responsive Design.
+ These examples override the primary ('mobile first') styles.
+ Modify as content requires.
+ ========================================================================== */
+
+ @media only screen and (min-width: 35em) {
+  /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+(-o-min-device-pixel-ratio: 5/4),
+(-webkit-min-device-pixel-ratio: 1.25),
+(min-resolution: 120dpi) {
+  /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+ Print styles.
+ Inlined to avoid required HTTP connection: h5bp.com/r
+ ========================================================================== */
+
+ @media print {
+  * {
+    background: transparent !important;
+    color: #000 !important; /* Black prints faster: h5bp.com/s */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+  /*
+   * Don't show links for images, or javascript/internal links
+   */
+
+   .ir a:after,
+   a[href^="javascript:"]:after,
+   a[href^="#"]:after {
+    content: "";
+  }
+
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  thead {
+    display: table-header-group; /* h5bp.com/t */
+  }
+
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  img {
+    max-width: 100% !important;
+  }
+
+  @page {
+    margin: 0.5cm;
+  }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
 }
 
 .flip {
   @include container(80em); 
 }
 
- 
+
