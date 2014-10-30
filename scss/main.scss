@@ -35,17 +35,13 @@
         margin: 150px auto;
         width: 600px;
         height: 400px;
-        /*
-        
-        Setting the perspective of the contents of the stage
-        but not the stage itself
-        
-        */
+        border: 1px solid black;
         -webkit-perspective: 800;
       }
 
       #rotate {
         margin: 0 auto;
+        border: 1px solid red;
         width: 600px;
         height: 400px;
         /* Ensure that we're in 3D space */
@@ -59,22 +55,14 @@
 
       .ring {
         margin: 0 auto;
-        height: 20px;
+        border: 1px solid blue;
+        height: 0px;
         width: 600px;
-        // -webkit-transform-style: preserve-3d;
-        // -webkit-animation-timing-function: linear;
-        //         -webkit-animation-iteration-count: infinite;
-
-      }
-
-      .ring-change {
-        margin: 0 auto;
-        height: 20px;
-        width: 600px;
-        background-color: orange;
         -webkit-transform-style: preserve-3d;
-        -webkit-animation-iteration-count: infinite;
-        -webkit-animation-timing-function: linear;
+        -webkit-animation-play-state:paused; 
+        -webkit-animation-timing-function: ease-in;
+        -webkit-animation-iteration-count: 5;
+
       }
       
       .ring > :nth-child(odd) {
@@ -93,9 +81,9 @@
         position: absolute;
         left: 30px; /*also helps keep ring straight*/
         width: 500px;
-        height: 50px;
+        height: 45px;
         color: rgba(0,0,0,0.9);
-        -webkit-border-radius: 10px;
+        -webkit-border-radius: 5px;
       }
       
       .selection > p {
@@ -122,6 +110,7 @@
       @-webkit-keyframes x-spin {
         0%    { -webkit-transform: rotateX(0deg); }
         50%   { -webkit-transform: rotateX(180deg); }
+
         100%  { -webkit-transform: rotateX(360deg); }
       }
 
