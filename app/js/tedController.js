@@ -7,14 +7,8 @@ var quoteAppender = function(quotesData) {
 			} 
 		}
 
-// var quoteRemover = function(quotesData) { 
-// 	for (var i = 0; i < quotesData.length; i++) {
-// 		var $div = '.'+i 
-// 		$($div).hide();
 
-// 			} 
 
-// 		}
 
 //AJAX stuff
 
@@ -30,7 +24,8 @@ var videoCall = function() {
 		success: function(data) {
 			console.log('Got back success from call!');
 			console.log(data);
-			quotesData = data.quotes;
+			tedImage = data.talk.images[3].image.url;
+			embedURL = data.talk.slug;
 		}
 	}); 
 }
@@ -63,18 +58,24 @@ $('.spin-button').on("click", function(e){
 		$(element).css('webkitAnimationPlayState', "running");
 		var $selected = quotesData[2].quote.quote;
 
+//fetching video image
+		videoCall();		
+
 //DISPLAYING FINAL QUOTE
 		window.setTimeout(function() {
 		// quoteRemover(quotesData);
 		$(element).css('webkitTransformStyle', "flat");
 		$(element).css('webkitAnimationPlayState', "paused");
-		$('.ring').fadeOut(500);
+		$('.selection').fadeOut(500);
 		$('.selected_quote').append($selected);
 		$('.selected_quote').show();
 		$('.retry-button').show();
 		$('.listen-button').show();
 		$('.spin-button').hide();
+		$('.main').css({'background-image' : 'url(' + tedImage + ')', 'background-repeat': 'no-repeat'} );
 	}, 3000);
+
+
 
 	} else {
 		$(element).css('webkitAnimationPlayState', "paused");

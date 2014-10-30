@@ -1,0 +1,83 @@
+#spinner {
+    @include span(6 of 6);
+    @include push(3 of 12);
+  margin:  auto;
+  // width: 600px;
+  height: 10px;
+      // border: 1px solid black;
+      -webkit-perspective: 700;
+    }
+
+    #rotate {
+      margin: 0 auto;
+      // border: 2px solid red;
+      width: 600px;
+      height: 30px;
+      /* Ensure that we're in 3D space */
+      -webkit-transform-style: preserve-3d;
+      /*
+      Make the whole set of rows use the x-axis spin animation
+      for a duration of 7 seconds, running infinitely and linearly
+      */
+
+    }
+
+    
+
+    .ring {
+      // border: 1px solid blue;
+      height: 30px;
+      width: 600px;
+      -webkit-transform-style: preserve-3d;
+      -webkit-animation-play-state:paused; 
+      -webkit-animation-timing-function: linear;
+      -webkit-animation-iteration-count: infinite;
+
+    }
+
+    
+    .ring > :nth-child(odd) {
+      background-color: #B87A91;
+
+    }
+
+    .ring > :nth-child(even) {
+      background-color: #8A567A;
+
+    }
+
+    .selection {
+      position: absolute;
+      left: 30px; /*also helps keep ring straight*/
+      width: 500px;
+      height: 30px;
+      // color: rgba(0,0,0,0.9);
+      -webkit-border-radius: 5px;
+      text-align: center;
+    }
+    
+    .selection > p {
+      font-family: 'News Cycle', sans-serif;
+      font-size: 12px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    /*
+    Set up each row to have a different animation duration
+    and alternating y-axis rotation directions.
+    */
+    #ring {
+      -webkit-animation-name: x-spin;
+      -webkit-animation-duration: 1s;
+      
+    }
+
+
+
+    @-webkit-keyframes x-spin {
+      0%    { -webkit-transform: rotateX(0deg); }
+      50%   { -webkit-transform: rotateX(180deg); }
+
+      100%  { -webkit-transform: rotateX(360deg); }
+    }

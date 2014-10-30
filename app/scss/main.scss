@@ -5,7 +5,7 @@
 * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
 * Kroc Camen, and the H5BP dev community and team.
 */
-
+ 
 
 /* ==========================================================================
  Browse Happy prompt
@@ -27,122 +27,52 @@ body {
   font-size: 11px;
 }
 
-h1 {
-  color: #FB4530;
-}  
-
-
 .container {
-  // background-color: #2A2722;
-@include container;
-@include susy-grid-background;
+  background-color: #2A2722;
+   @include container(); 
 }  
+
+.main {
+  width: 800px;
+  height: 600px;
+}
+
+h1 {
+  @include span(3 of 12);
+  color: #FB4530;
+  font-size: 50px;
+  margin-bottom: 70px;
+}
 
 .button-holder {
-  margin-bottom: 20px;
-  padding: 50px;
+  @include span(6 of 12);
+  @include push(3 of 12);
+  margin-bottom: 70px;
+  float: right;
 }
 
 .retry-button, .listen-button {
   display: none;
 }
 
+.video_embed {
+  display: none;
+}
 
-
-#spinner {
-  margin: 150px auto;
-  width: 600px;
-  height: 10px;
-      // border: 1px solid black;
-      -webkit-perspective: 700;
-    }
-
-    #rotate {
-      margin: 0 auto;
-      // border: 2px solid red;
-      width: 600px;
-      height: 30px;
-      /* Ensure that we're in 3D space */
-      -webkit-transform-style: preserve-3d;
-      /*
-      Make the whole set of rows use the x-axis spin animation
-      for a duration of 7 seconds, running infinitely and linearly
-      */
-
-    }
-
-    .selected_quote {
+ .selected_quote {
       display: none;
+      @include span(5 of 12);
       padding: 10px;
-      height: 300px;
-      width: 300px;
-      background-color: #DC9B99;
+      background-color: rgba(220, 155, 153, 0.2);
       color: white;
       font-size: 20px;
 
-    }
 
-    .ring {
-      // border: 1px solid blue;
-      height: 30px;
-      width: 600px;
-      -webkit-transform-style: preserve-3d;
-      -webkit-animation-play-state:paused; 
-      -webkit-animation-timing-function: linear;
-      -webkit-animation-iteration-count: infinite;
-
-    }
-
-    
-    .ring > :nth-child(odd) {
-      background-color: #B87A91;
-
-    }
-
-    .ring > :nth-child(even) {
-      background-color: #8A567A;
-
-    }
-// #DC9B99
-    .selection {
-      position: absolute;
-      left: 30px; /*also helps keep ring straight*/
-      width: 500px;
-      height: 30px;
-      // color: rgba(0,0,0,0.9);
-      -webkit-border-radius: 5px;
-      text-align: center;
-    }
-    
-    .selection > p {
-      font-family: 'News Cycle', sans-serif;
-      font-size: 12px;
-      font-weight: bold;
-      text-align: center;
-    }
-
-    /*
-    Set up each row to have a different animation duration
-    and alternating y-axis rotation directions.
-    */
-    #ring {
-      -webkit-animation-name: x-spin;
-      -webkit-animation-duration: 1s;
-      
-    }
-
-
-
-    @-webkit-keyframes x-spin {
-      0%    { -webkit-transform: rotateX(0deg); }
-      50%   { -webkit-transform: rotateX(180deg); }
-
-      100%  { -webkit-transform: rotateX(360deg); }
-    }
+    } 
 
     
 
-
+   
 
 
 /* ==========================================================================
