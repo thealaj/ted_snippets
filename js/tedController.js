@@ -1,11 +1,39 @@
-var spinAppender = function(quotesData) { 
+var quoteAppender = function(quotesData) { 
 	for (var i = 0; i < quotesData.length; i++) {
 		var $div = '.'+i 
 		var quotestring = quotesData[i].quote.quote
-		$($div).append("<p>"+quotestring+"</p>");
+		quotestring = quotestring.substring(0, 100) + " ...";
+		$($div).append(quotestring);
 			} 
 		}
 
+var quoteRemover = function(quotesData) { 
+	for (var i = 0; i < quotesData.length; i++) {
+		var $div = '.'+i 
+		$($div).hide();
+
+			} 
+
+		}
+
+//AJAX stuff
+
+var videoCall = function() {
+	var talkID = quotesData[2].quote.talk_id;
+	$.ajax({
+		type: 'GET',
+		url: 'https://api.ted.com/v1/talks/' + talkID + '.json?external=true&api-key=',
+		dataType: "jsonp",
+		error: function(a) {
+			console.log('error', a.responseText);
+		},
+		success: function(data) {
+			console.log('Got back success from call!');
+			console.log(data);
+			quotesData = data.quotes;
+		}
+	}); 
+}
 
 $(document).ready(function() { 
 var randNumber = Math.floor(Math.random() * 2145);
@@ -24,11 +52,29 @@ var randNumber = Math.floor(Math.random() * 2145);
 	}); 
 });
 
+
+
+//make this a function and add in extra button//
 $('.spin-button').on("click", function(e){
-		spinAppender(quotesData);
-		e.preventDefault;
 		var element = document.getElementById("ring");
-		element.style.webkitAnimationPlayState = "running";
+	if (element.style.webkitAnimationPlayState === "paused") {
+		quoteAppender(quotesData);
+		e.preventDefault;
+		$(element).css('webkitAnimationPlayState', "running");
+		var $selected = quotesData[2].quote.quote;
+
+//DISPLAYING FINAL QUOTE
+		window.setTimeout(function() {
+		quoteRemover(quotesData);
+		$(element).css('webkitTransformStyle', "flat");
+		$(element).css('webkitAnimationPlayState', "paused");
+		$('.ring').empty();
+		$('.ring').append($selected);
+	}, 5000);
+
+	} else {
+		$(element).css('webkitAnimationPlayState', "paused");
+		}
 		// $($element).classList.remove('ring');
 		// $element.offsetWidth = $element.offsetWidth;
 		// $($element).classList.add('ring');
