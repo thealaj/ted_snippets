@@ -521,6 +521,36 @@ body {
   font-size: 11px;
 }
 
+.navbar {
+  background-color: gray;
+  padding: 5px;
+  width: 100%;
+  float: left;
+  clear: both;
+}
+
+.header {
+  float: left;
+  margin: 10px;
+}
+
+.retry-button, .listen-button, .spin-button {
+  float: left;
+  height: 50px;
+  padding: 10px;
+  font-size: 20px;
+  background-color: white;
+  cursor: pointer;
+}
+
+.retry-button:hover, .listen-button:hover, .spin-button:hover {
+  background-color: red;
+}
+
+.retry-button, .listen-button {
+  display: none;
+}
+
 .container {
   background-color: #2A2722;
   max-width: 100%;
@@ -533,31 +563,17 @@ body {
   clear: both;
 }
 
-.main {
-  width: 800px;
-  height: 600px;
-}
-
 h1 {
-  width: 23.72881%;
-  float: left;
-  margin-right: 1.69492%;
   color: #FB4530;
   font-size: 50px;
-  margin-bottom: 70px;
 }
 
-.button-holder {
+.main {
   width: 49.15254%;
   float: left;
   margin-right: 1.69492%;
-  margin-left: 25.42373%;
-  margin-bottom: 70px;
-  float: right;
-}
-
-.retry-button, .listen-button {
-  display: none;
+  width: 615px;
+  height: 461px;
 }
 
 .video_embed {
@@ -570,7 +586,7 @@ h1 {
   float: left;
   margin-right: 1.69492%;
   padding: 10px;
-  background-color: rgba(220, 155, 153, 0.2);
+  background-color: rgba(220, 155, 153, 0.3);
   color: white;
   font-size: 20px;
 }

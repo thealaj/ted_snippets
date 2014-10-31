@@ -27,33 +27,56 @@ body {
   font-size: 11px;
 }
 
-.container {
-  background-color: #2A2722;
-   @include container(); 
-}  
 
-.main {
-  width: 800px;
-  height: 600px;
+.navbar {
+  // @include span(12 of 12);
+  background-color: gray;
+  padding: 5px;
+  width: 100%;
+  float: left;
+  clear: both;
 }
 
-h1 {
-  @include span(3 of 12);
-  color: #FB4530;
-  font-size: 50px;
-  margin-bottom: 70px;
+.header {
+  float: left;
+  margin: 10px;
 }
 
-.button-holder {
-  @include span(6 of 12);
-  @include push(3 of 12);
-  margin-bottom: 70px;
-  float: right;
+.retry-button, .listen-button, .spin-button {
+  float: left;
+  height: 50px;
+  padding: 10px;
+  font-size: 20px;
+  background-color: white;
+  cursor: pointer;
+}
+
+.retry-button:hover, .listen-button:hover, .spin-button:hover {
+  background-color: red;
 }
 
 .retry-button, .listen-button {
   display: none;
 }
+
+.container {
+  background-color: #2A2722;
+   @include container(); 
+}  
+
+h1 {
+  color: #FB4530;
+  font-size: 50px;
+}
+
+.main {
+  @include span(6 of 12);
+  width: 615px;
+  height: 461px;
+}
+
+ 
+
 
 .video_embed {
   display: none;
@@ -63,7 +86,7 @@ h1 {
       display: none;
       @include span(5 of 12);
       padding: 10px;
-      background-color: rgba(220, 155, 153, 0.2);
+      background-color: rgba(220, 155, 153, 0.3);
       color: white;
       font-size: 20px;
 
