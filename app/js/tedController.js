@@ -3,7 +3,7 @@ var quoteAppender = function(quotesData) {
 	for (var i = 0; i < quotesData.length; i++) {
 		var $div = '.'+i; 
 		var quotestring = quotesData[i].quote.quote;
-		quotestring = quotestring.substring(0, 100) + " ...";
+		quotestring = quotestring.substring(0, 150) + " ...";
 		$($div).append(quotestring);
 			} 
 		}
@@ -40,7 +40,7 @@ var pullTedQuotes = function(resolve, reject) {
 
 //TED VIDEO CALL
 var videoCall = function() {
-	var talkID = quotesData[2].quote.talk_id;
+	var talkID = quotesData[0].quote.talk_id;
 	$.ajax({
 		type: 'GET',
 		url: 'https://api.ted.com/v1/talks/' + talkID + '.json?external=true&api-key=',
@@ -62,33 +62,32 @@ $(document).ready(function() {
 	pullTedQuotes();
 });
 
-
-
-//SPIN BUTTON ACTIONS//
-$('.spin-button').on("click", function(e){
-		var element = document.getElementById("ring");
-		quoteAppender(quotesData);
-		e.preventDefault;
-		$(element).css('webkitAnimationPlayState', "running");
-		var $selected = quotesData[2].quote.quote;
-
-//fetching video image
-		videoCall();		
-
-//DISPLAYING FINAL QUOTE
-		window.setTimeout(function() {
-		// quoteRemover(quotesData);
+//REFACTORED DISPLAY QUOTE
+var displayQuote = function() {
+	var element = document.getElementById("ring");
+	var $selected = quotesData[0].quote.quote;
+	window.setTimeout(function() {
 		$(element).css('webkitAnimationPlayState', "paused");
-		$('.selection').fadeOut(500);
 		$('.selected_quote').append($selected);
 		$('.selected_quote').show();
 		$('.retry-button').show();
 		$('.listen-button').show();
 		$('.spin-button').hide();
-		$('.main').css({'background-image' : 'url(' + tedImage + ')', 'background-repeat': 'no-repeat'} );
+		$('.ted-image').css({'background-image' : 'url(' + tedImage + ')', 'background-repeat': 'no-repeat'} );
 	}, 3000);
+}
 
-	 
+//SPIN BUTTON ACTIONS//
+$('.spin-button').on("click", function(e){
+		var wheel = document.getElementById("ring");
+		quoteAppender(quotesData);
+		e.preventDefault;
+		$(wheel).css('webkitAnimationPlayState', "running");
+//fetching video image
+		videoCall();		
+
+//DISPLAYING FINAL QUOTE
+		displayQuote();	 
 	});
 
 $('.retry-button').on("click", function(e){
@@ -97,7 +96,7 @@ $('.retry-button').on("click", function(e){
 		$('.selected_quote').empty();
 		$('.retry-button').hide();
 		$('.listen-button').hide();
-		$('.main').css('background-image', '');
+		$('.ted-image').css('background-image', '');
 		//run request
 
 	var promise = new Promise(function(resolve, reject){
@@ -127,8 +126,8 @@ $('.retry-button').on("click", function(e){
 		$('.selected_quote').show();
 		$('.retry-button').show();
 		$('.listen-button').show();
-		$('.spin-button').hide();
-		$('.main').css({'background-image' : 'url(' + tedImage + ')', 'background-repeat': 'no-repeat'} );
+		// $('.spin-button').hide();
+		$('.ted-image').css({'background-image' : 'url(' + tedImage + ')', 'background-repeat': 'no-repeat'} );
 	}, 3000);
 
 		},function(err){
@@ -141,7 +140,7 @@ $('.retry-button').on("click", function(e){
 
 $('.listen-button').on("click", function(e){
 		// $('.selected_quote').empty();
-		$('.selected_quote').hide();
+		$('.selected_quote').show();
 		$('.retry-button').show();
 		$('.listen-button').hide();
 		$('.spin-button').hide();

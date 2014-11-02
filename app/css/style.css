@@ -518,75 +518,81 @@ table {
  ========================================================================== */
 body {
   font-family: 'News Cycle', Helvetica, sans-serif;
-  font-size: 11px;
+  box-sizing: border-box;
+}
+
+.main {
+  display: flex;
 }
 
 .navbar {
-  background-color: gray;
-  padding: 5px;
-  width: 100%;
-  float: left;
-  clear: both;
+  background-color: #BAC5C9;
+  padding-top: 20px;
+  width: 40%;
+  height: 100%;
+  clear: left;
 }
 
 .header {
-  float: left;
-  margin: 10px;
+  height: 95px;
+  padding: 10px;
+  background-color: white;
+  margin: 0 auto;
+}
+
+.button-holder {
+  margin: 0 auto;
 }
 
 .retry-button, .listen-button, .spin-button {
   float: left;
-  height: 50px;
   padding: 10px;
   font-size: 20px;
-  background-color: white;
+  color: #fff;
+  background-color: #CB3743;
   cursor: pointer;
+  border: 1px solid #fff;
 }
 
 .retry-button:hover, .listen-button:hover, .spin-button:hover {
-  background-color: red;
+  background-color: #FFF;
+  color: #CB3743;
 }
 
-.retry-button, .listen-button {
-  display: none;
+.wheel-holder {
+  padding-bottom: 200px;
+  padding-top: 100px;
+  margin: 20px;
+  margin-left: -100px;
 }
 
 .container {
+  height: 100%;
+  float: right;
   background-color: #2A2722;
-  max-width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-}
-.container:after {
-  content: " ";
-  display: block;
-  clear: both;
 }
 
 h1 {
-  color: #FB4530;
+  color: #CB3743;
   font-size: 50px;
+  margin: 0;
+  padding: 0;
 }
 
-.main {
-  width: 49.15254%;
-  float: left;
-  margin-right: 1.69492%;
+.ted-image {
   width: 615px;
   height: 461px;
 }
 
 .video_embed {
-  display: none;
+  background-color: yellow;
 }
 
 .selected_quote {
-  display: none;
-  width: 40.67797%;
-  float: left;
-  margin-right: 1.69492%;
   padding: 10px;
-  background-color: rgba(220, 155, 153, 0.3);
+  margin-top: 20px;
+  height: 95px;
+  background-color: RGBA(186, 197, 201, 0.5);
   color: white;
   font-size: 20px;
 }
@@ -718,19 +724,13 @@ h1 {
 }
 
 #spinner {
-  width: 100%;
-  float: left;
-  margin-left: 0;
-  margin-right: 0;
-  margin-left: 25.42373%;
   margin: auto;
   height: 10px;
-  -webkit-perspective: 700;
+  -webkit-perspective: 1000;
 }
 
 #rotate {
   margin: 0 auto;
-  width: 600px;
   height: 30px;
   /* Ensure that we're in 3D space */
   -webkit-transform-style: preserve-3d;
@@ -741,8 +741,8 @@ h1 {
 }
 
 .ring {
-  height: 30px;
-  width: 600px;
+  height: 50px;
+  width: 50px;
   -webkit-transform-style: preserve-3d;
   -webkit-animation-play-state: paused;
   -webkit-animation-timing-function: linear;
@@ -750,28 +750,31 @@ h1 {
 }
 
 .ring > :nth-child(odd) {
-  background-color: #B87A91;
+  background: -webkit-gradient(left top, left bottom, color-stop(11%, rgba(191, 50, 61, 0.96)), color-stop(22%, rgba(193, 54, 65, 0.96)), color-stop(26%, #c23742), color-stop(100%, #d2525c));
+  /* Chrome, Safari4+ */
+  background: -webkit-linear-gradient(top, rgba(191, 50, 61, 0.96) 11%, rgba(193, 54, 65, 0.96) 22%, #c23742 26%, #d2525c 100%);
+  /* Chrome10+,Safari5.1+ */
+  border: 2px solid #fff;
 }
 
 .ring > :nth-child(even) {
-  background-color: #8A567A;
+  background: -webkit-gradient(left top, left bottom, color-stop(11%, rgba(196, 205, 208, 0.96)), color-stop(22%, rgba(189, 199, 203, 0.96)), color-stop(26%, #bac5c9), color-stop(100%, #8a9da4));
+  /* Chrome, Safari4+ */
+  background: -webkit-linear-gradient(top, rgba(196, 205, 208, 0.96) 11%, rgba(189, 199, 203, 0.96) 22%, #bac5c9 26%, #8a9da4 100%);
+  /* Chrome10+,Safari5.1+ */
+  border: 2px solid #fff;
 }
 
 .selection {
   position: absolute;
-  left: 30px;
+  left: 135px;
   /*also helps keep ring straight*/
-  width: 500px;
-  height: 30px;
+  width: 300px;
+  height: 40px;
   -webkit-border-radius: 5px;
+  padding: 2px;
   text-align: center;
-}
-
-.selection > p {
-  font-family: 'News Cycle', sans-serif;
-  font-size: 12px;
-  font-weight: bold;
-  text-align: center;
+  font-size: 9px;
 }
 
 /*
@@ -779,6 +782,7 @@ Set up each row to have a different animation duration
 and alternating y-axis rotation directions.
 */
 #ring {
+  margin-top: 50px;
   -webkit-animation-name: x-spin;
   -webkit-animation-duration: 1s;
 }
