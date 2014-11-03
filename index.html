@@ -14,6 +14,7 @@
 
         <script src="app/js/vendor/modernizr-2.6.2.min.js"></script>
         <link rel="stylesheet" href="/app/css/style.css">
+        <link rel="stylesheet" href="src/bower_components/jquery-modal/jquery.modal.css" type="text/css" media="screen" />
         <link href='http://fonts.googleapis.com/css?family=News+Cycle' rel='stylesheet' type='text/css'>
     </head>
     <body>
@@ -53,21 +54,21 @@
       </div>
          </div>
          </div>
-         Find TED Talks by quote.
 </div>
 <div class="container">
+        <div class="selected_quote"><p class="quote-graf">Spin to search for the perfect TED talk by sound bite. Don't like what you see? Just spin again!<p></div>
  <div class="ted-image">
-        <div class="selected_quote"><p class="quote-graf"><em>Spin for a sound bite to select your TED Talk</em><p></div>
  </div>  
-hi:)
- <div class="video_embed"></div>
+ <div id="video_embed" class="modal"></div>
 
  
  </div>
  </div>
+ <div class="footer">clear both please</div>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="app/js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+        <script src="src/bower_components/jquery-modal/jquery.modal.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="/app/js/main.js"></script>
          <script src="/app/js/tedController.js"></script>
 

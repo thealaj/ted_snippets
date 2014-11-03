@@ -23,7 +23,7 @@ for a duration of 7 seconds, running infinitely and linearly
 
 
 .ring {
-  height: 50px;
+  height: 60px;
   width: 50px;
   -webkit-transform-style: preserve-3d;
   -webkit-animation-play-state:paused; 
@@ -40,24 +40,26 @@ background: -webkit-linear-gradient(top, rgba(191,50,61,0.96) 11%, rgba(193,54,6
 }
 
 .ring > :nth-child(even) {
-  background: -webkit-gradient(left top, left bottom, color-stop(11%, rgba(196,205,208,0.96)), color-stop(22%, rgba(189,199,203,0.96)), color-stop(26%, rgba(186,197,201,1)), color-stop(100%, rgba(138,157,164,1)));/* Chrome, Safari4+ */
-  background: -webkit-linear-gradient(top, rgba(196,205,208,0.96) 11%, rgba(189,199,203,0.96) 22%, rgba(186,197,201,1) 26%, rgba(138,157,164,1) 100%); /* Chrome10+,Safari5.1+ */
-  border: 2px solid #fff;
+
+background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(149,163,179,1)), color-stop(100%, rgba(212,228,239,1)));
+background: -webkit-linear-gradient(top, rgba(149,163,179,1) 0%, rgba(212,228,239,1) 100%);
+
+  border: 1.5px solid #fff;
 
 
 }
 
 .selection {
-
+  
   position: absolute;
-  left: 135px; /*also helps keep ring straight*/
+  left: 130px; /*also helps keep ring straight*/
   width: 300px;
-  height: 40px;
-// color: rgba(0,0,0,0.9);
-  -webkit-border-radius: 5px;
+  height: 34px;
+  color: #FFF;
+  -webkit-border-radius: 4px;
   padding: 2px;
   text-align: center;
-  font-size: 9px;
+  font-size: 10px;
 }
 
 

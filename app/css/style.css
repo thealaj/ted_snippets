@@ -529,12 +529,11 @@ body {
   background-color: #BAC5C9;
   padding-top: 20px;
   width: 40%;
-  height: 100%;
-  clear: left;
+  flex: 0 0 24em;
 }
 
 .header {
-  height: 95px;
+  min-height: 95px;
   padding: 10px;
   background-color: white;
   margin: 0 auto;
@@ -559,6 +558,10 @@ body {
   color: #CB3743;
 }
 
+.retry-button, .listen-button {
+  display: none;
+}
+
 .wheel-holder {
   padding-bottom: 200px;
   padding-top: 100px;
@@ -567,7 +570,6 @@ body {
 }
 
 .container {
-  height: 100%;
   float: right;
   background-color: #2A2722;
 }
@@ -582,19 +584,34 @@ h1 {
 .ted-image {
   width: 615px;
   height: 461px;
+  margin-top: -15px;
 }
 
-.video_embed {
-  background-color: yellow;
+#video_embed.modal {
+  width: 560px;
+}
+
+#video_embed {
+  background-color: #BAC5C9;
 }
 
 .selected_quote {
-  padding: 10px;
+  padding-right: 10px;
   margin-top: 20px;
-  height: 95px;
-  background-color: RGBA(186, 197, 201, 0.5);
+  min-height: 115px;
+  background-color: RGBA(186, 197, 201, 0.7);
+}
+
+.quote-graf {
+  padding: 5px;
   color: white;
-  font-size: 20px;
+  font-size: 16px;
+  font-style: italic;
+}
+
+.footer {
+  clear: both;
+  background-color: #fff;
 }
 
 /* ==========================================================================
@@ -741,7 +758,7 @@ h1 {
 }
 
 .ring {
-  height: 50px;
+  height: 60px;
   width: 50px;
   -webkit-transform-style: preserve-3d;
   -webkit-animation-play-state: paused;
@@ -758,23 +775,22 @@ h1 {
 }
 
 .ring > :nth-child(even) {
-  background: -webkit-gradient(left top, left bottom, color-stop(11%, rgba(196, 205, 208, 0.96)), color-stop(22%, rgba(189, 199, 203, 0.96)), color-stop(26%, #bac5c9), color-stop(100%, #8a9da4));
-  /* Chrome, Safari4+ */
-  background: -webkit-linear-gradient(top, rgba(196, 205, 208, 0.96) 11%, rgba(189, 199, 203, 0.96) 22%, #bac5c9 26%, #8a9da4 100%);
-  /* Chrome10+,Safari5.1+ */
-  border: 2px solid #fff;
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, #95a3b3), color-stop(100%, #d4e4ef));
+  background: -webkit-linear-gradient(top, #95a3b3 0%, #d4e4ef 100%);
+  border: 1.5px solid #fff;
 }
 
 .selection {
   position: absolute;
-  left: 135px;
+  left: 130px;
   /*also helps keep ring straight*/
   width: 300px;
-  height: 40px;
-  -webkit-border-radius: 5px;
+  height: 34px;
+  color: #FFF;
+  -webkit-border-radius: 4px;
   padding: 2px;
   text-align: center;
-  font-size: 9px;
+  font-size: 10px;
 }
 
 /*

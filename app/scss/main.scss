@@ -36,12 +36,11 @@ body {
   background-color: #BAC5C9;
   padding-top: 20px;
   width: 40%;
-  height: 100%;
-  clear: left;
+    flex: 0 0 24em;
 }
 
 .header {
-  height: 95px;
+  min-height: 95px;
   padding: 10px;
   background-color: white;
   margin: 0 auto;
@@ -66,9 +65,9 @@ body {
   color: #CB3743;
 }
 
-// .retry-button, .listen-button {
-//   display: none;
-// }
+.retry-button, .listen-button {
+  display: none;
+}
 
 .wheel-holder {
   padding-bottom: 200px;
@@ -80,10 +79,9 @@ body {
 
 
 .container {
-  height: 100%;
   float: right;
   background-color: #2A2722;
-  // flex: 0 0 32em;
+
 
   
 }  
@@ -98,31 +96,38 @@ h1 {
 .ted-image {
   width: 615px;
   height: 461px;
+  margin-top: -15px;
 }
 
- 
+ #video_embed.modal {
+  width: 560px;
+ }
 
 
-.video_embed {
-  // display: none;
-  background-color: yellow;
+#video_embed {
+  background-color: #BAC5C9;
 
 }
 
  .selected_quote {
-  padding: 10px;
+  padding-right: 10px;
   margin-top: 20px;  
-  height: 95px; 
-  background-color: RGBA(186, 197, 201, .5);
-  color: white;
-  font-size: 20px;
+  min-height: 115px; 
+  background-color: RGBA(186, 197, 201, .7);
+  } 
 
+  .quote-graf {
+    padding: 5px;
+    color: white;
+    font-size: 16px;
+    font-style: italic;
 
-    } 
+  }  
 
-    
-
-   
+  .footer {
+    clear: both;
+    background-color: #fff;
+  } 
 
 
 /* ==========================================================================
