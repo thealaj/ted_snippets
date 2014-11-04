@@ -3,7 +3,7 @@ var quoteAppender = function(quotesData) {
 	for (var i = 0; i < quotesData.length; i++) {
 		var $div = '.'+i; 
 		var quotestring = quotesData[i].quote.quote;
-		quotestring = quotestring.substring(0, 150) + " ...";
+		quotestring = quotestring.substring(0, 160) + " ...";
 		$($div).append(quotestring);
 			} 
 		}
@@ -18,7 +18,7 @@ var pullTedQuotes = function(resolve, reject) {
 	console.log("resolve",resolve,"err",reject);
 	$.ajax({
 		type: 'GET',
-		url: 'https://api.ted.com/v1/quotes.json?api-key=&filter=id:' + randNumber +'..' + (randNumber + 5),
+		url: 'https://api.ted.com/v1/quotes.json?api-key=jecy9dbbqwmkydq4pct447fh&filter=id:' + randNumber +'..' + (randNumber + 5),
 		dataType: "jsonp",
 		error: function(a) {
 			console.log('error', a.responseText);
@@ -43,7 +43,7 @@ var videoCall = function() {
 	var talkID = quotesData[0].quote.talk_id;
 	$.ajax({
 		type: 'GET',
-		url: 'https://api.ted.com/v1/talks/' + talkID + '.json?external=true&api-key=',
+		url: 'https://api.ted.com/v1/talks/' + talkID + '.json?external=true&api-key=jecy9dbbqwmkydq4pct447fh',
 		dataType: "jsonp",
 		error: function(a) {
 			console.log('error', a.responseText);
@@ -53,7 +53,8 @@ var videoCall = function() {
 			console.log(data);
 			tedImage = data.talk.images[2].image.url;
 			embedURL = data.talk.slug;
-			speaker = data.talk.speakers[0].speaker.name
+			speaker = data.talk.speakers[0].speaker.name;
+			 
 		}
 	}); 
 }
@@ -66,8 +67,8 @@ $(document).ready(function() {
 //REFACTORED DISPLAY QUOTE
 var displayQuote = function(data) {
 	var element = document.getElementById("ring");
-	var $selected = quotesData[0].quote.quote;
 	window.setTimeout(function() {
+	var $selected = "<em>" + quotesData[0].quote.quote + " </em><strong>&mdash;" + speaker + "</strong>";
 		$(element).css('webkitAnimationPlayState', "paused");
 		$('.ted-image').css('background-image', '');
 		$('.quote-graf').empty();

@@ -529,7 +529,8 @@ body {
   background-color: #BAC5C9;
   padding-top: 20px;
   width: 40%;
-  flex: 0 0 24em;
+  flex: 1 0 24em;
+  /*flex grow, shrink basis*/
 }
 
 .header {
@@ -537,6 +538,7 @@ body {
   padding: 10px;
   background-color: white;
   margin: 0 auto;
+  text-align: center;
 }
 
 .button-holder {
@@ -566,7 +568,7 @@ body {
   padding-bottom: 200px;
   padding-top: 100px;
   margin: 20px;
-  margin-left: -100px;
+  margin-left: -30px;
 }
 
 .container {
@@ -599,19 +601,21 @@ h1 {
   padding-right: 10px;
   margin-top: 20px;
   min-height: 115px;
+  max-width: 615px;
   background-color: RGBA(186, 197, 201, 0.7);
 }
 
 .quote-graf {
-  padding: 5px;
+  padding: 10px;
+  padding-top: 30px;
   color: white;
   font-size: 16px;
-  font-style: italic;
 }
 
 .footer {
   clear: both;
   background-color: #fff;
+  font-size: 8px;
 }
 
 /* ==========================================================================
@@ -782,15 +786,15 @@ h1 {
 
 .selection {
   position: absolute;
-  left: 130px;
+  left: 60px;
   /*also helps keep ring straight*/
   width: 300px;
-  height: 34px;
+  height: 36px;
   color: #FFF;
   -webkit-border-radius: 4px;
   padding: 2px;
   text-align: center;
-  font-size: 10px;
+  font-size: 9.5px;
 }
 
 /*
