@@ -25,6 +25,10 @@
  
 var express = require('express');
 var app = express();
+
+app.set('port', (process.env.PORT || 5000))
+ 
+
 var server = app.listen(3000);
 var request = require('request');
 var queryString = require('query-string');
@@ -57,3 +61,7 @@ app.get('/proxy', function(req, res) {
 		}
 	});
 });
+
+app.listen(app.get('port'), function() {
+  console.log("Node app is running at localhost:" + app.get('port'))
+})
