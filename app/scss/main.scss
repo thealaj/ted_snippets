@@ -5,7 +5,7 @@
 * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
 * Kroc Camen, and the H5BP dev community and team.
 */
- 
+
 
 /* ==========================================================================
  Browse Happy prompt
@@ -74,7 +74,7 @@ body {
   padding-bottom: 200px;
   padding-top: 100px;
   margin: 20px;
-  margin-left: -30px;  
+  margin-left: -30px;
 
 }
 
@@ -85,8 +85,8 @@ body {
   flex: 1 1 40em;  /*flex grow, shrink basis*/
 
 
-  
-}  
+
+}
 
 h1 {
   color: #CB3743;
@@ -113,11 +113,11 @@ h1 {
 
  .selected_quote {
   padding-right: 10px;
-  margin-top: 20px;  
-  min-height: 115px; 
+  margin-top: 20px;
+  min-height: 115px;
   max-width: 615px;
   background-color: RGBA(186, 197, 201, .7);
-  } 
+  }
 
   .quote-graf {
     padding: 10px;
@@ -126,13 +126,14 @@ h1 {
     font-size: 16px;
     // font-style: italic;
 
-  }  
+  }
 
   .footer {
     clear: both;
     background-color: #fff;
-    font-size: 8px;
-  } 
+    font-size: 12px;
+    text-align: left;
+  }
 
 
 /* ==========================================================================
@@ -262,7 +263,7 @@ h1 {
 }
 
 .flip {
-  @include container(80em); 
+  @include container(80em);
 }
 
 
