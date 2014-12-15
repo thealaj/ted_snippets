@@ -1,11 +1,11 @@
 
-var quoteAppender = function(quotesData) { 
+var quoteAppender = function(quotesData) {
 	for (var i = 0; i < quotesData.length; i++) {
-		var $div = '.'+i; 
+		var $div = '.'+i;
 		var quotestring = quotesData[i].quote.quote;
 		quotestring = quotestring.substring(0, 160) + " ...";
 		$($div).append(quotestring);
-			} 
+			}
 		}
 
 //TED API CALLS
@@ -33,9 +33,9 @@ var pullTedQuotes = function(resolve, reject) {
 			if(resolve) {
 				resolve(quotesData);
 			}
-			
+
 		}
-	}); 
+	});
 };
 
 //TED VIDEO CALL
@@ -54,13 +54,13 @@ var videoCall = function() {
 			tedImage = data.talk.images[2].image.url;
 			embedURL = data.talk.slug;
 			speaker = data.talk.speakers[0].speaker.name;
-			 
+
 		}
-	}); 
+	});
 }
 
 
-$(document).ready(function() { 
+$(document).ready(function() {
 	pullTedQuotes();
 });
 
@@ -88,21 +88,21 @@ $('.spin-button').on("click", function(e){
 		e.preventDefault;
 		$(wheel).css('webkitAnimationPlayState', "running");
 //fetching video image
-		videoCall();		
+		videoCall();
 
 //DISPLAYING FINAL QUOTE
-		displayQuote();	 
+		displayQuote();
 	});
 
 $('.retry-button').on("click", function(e){
 		$('.selection').empty();
 		$('.selection').fadeIn(500);
-		
+
 
 		//run request
 
 	var promise = new Promise(function(resolve, reject){
-			pullTedQuotes(resolve, reject); 
+			pullTedQuotes(resolve, reject);
 		// debugger;
 		});
 
@@ -110,17 +110,17 @@ $('.retry-button').on("click", function(e){
 	promise.then(function(quotesData) {
  		var element = document.getElementById("ring");
 		$(element).css('webkitAnimationPlayState', "running");
-	 
+
 		quoteAppender(quotesData);
 		e.preventDefault;
 		$(element).css('webkitAnimationPlayState', "running");
 
 //fetching video image
 		var $selected = quotesData[0].quote.quote;
-		videoCall();		
+		videoCall();
 
 //DISPLAYING NEW QUOTE
-		displayQuote();	
+		displayQuote();
 
 		},function(err){
 			console.log("Ohno!",err);
@@ -133,11 +133,11 @@ $('.retry-button').on("click", function(e){
 $('.listen-button').on("click", function(e){
 		$('.retry-button').show();
 		$('.listen-button').hide();
-		var $videoURL = "http://embed-ssl.ted.com/talks/" + embedURL + ".html"
-		var $video = $('<iframe src='+ $videoURL +' width="560" height="315" frameborder="0" scrolling="no" webkitAllowFullScreen allowFullScreen></iframe>');
+		var $videoURL = "https://embed-ssl.ted.com/talks/" + embedURL + ".html"
+		var $video = $('<iframe sandbox="" src='+ $videoURL +' width="560" height="315" frameborder="0" scrolling="no" webkitAllowFullScreen allowFullScreen></iframe>');
  		$('#video_embed').append($video);
  		$('#video_embed').modal();
 
-	 
+
 	});
 
