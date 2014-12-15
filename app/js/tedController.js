@@ -133,8 +133,8 @@ $('.retry-button').on("click", function(e){
 $('.listen-button').on("click", function(e){
 		$('.retry-button').show();
 		$('.listen-button').hide();
-		var $videoURL = "http://embed-ssl.ted.com/talks/" + embedURL + ".html"
-		var $video = $('<iframe sandbox="allow-same-origin allow-scripts" src='+ $videoURL +' width="560" height="315" frameborder="0" scrolling="no" webkitAllowFullScreen allowFullScreen></iframe>');
+		var $videoURL = "https://embed-ssl.ted.com/talks/" + embedURL + ".html"
+		var $video = $('<iframe src='+ $videoURL +' width="560" height="315" frameborder="0" scrolling="no" webkitAllowFullScreen allowFullScreen></iframe>');
  		$('#video_embed').append($video);
  		$('#video_embed').modal();
 
