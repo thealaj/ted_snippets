@@ -27,8 +27,8 @@ var pullTedQuotes = function(resolve, reject) {
 			}
 		},
 		success: function(data) {
-			console.log('Got back success from call!');
-			console.log(data);
+			// console.log('Got back success from call!');
+			// console.log(data);
 			quotesData = data.quotes;
 			if(resolve) {
 				resolve(quotesData);
