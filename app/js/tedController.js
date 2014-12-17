@@ -15,7 +15,7 @@ var pullTedQuotes = function(resolve, reject) {
 
 	}
 	var randNumber = Math.floor(Math.random() * 2145);
-	console.log("resolve",resolve,"err",reject);
+	// console.log("resolve",resolve,"err",reject);
 	$.ajax({
 		type: 'GET',
 		url: 'https://api.ted.com/v1/quotes.json?api-key=jecy9dbbqwmkydq4pct447fh&filter=id:' + randNumber +'..' + (randNumber + 5),
@@ -49,8 +49,8 @@ var videoCall = function() {
 			console.log('error', a.responseText);
 		},
 		success: function(data) {
-			console.log('Got back success from call!');
-			console.log(data);
+			// console.log('Got back success from call!');
+			// console.log(data);
 			tedImage = data.talk.images[2].image.url;
 			embedURL = data.talk.slug;
 			speaker = data.talk.speakers[0].speaker.name;
